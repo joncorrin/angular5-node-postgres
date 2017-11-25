@@ -1,4 +1,4 @@
-# DigitizePatternApp
+# Angular 5 NodeJS Postgres App
 
 ### Step 1
 

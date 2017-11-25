@@ -9,7 +9,7 @@ const logger = require('morgan');
 const index = require('./server/routes/index');
 const user = require('./server/routes/user');
 
-const url = "https://www.rebargoapp.com";
+const url = "url";
 const devUrl = "http://localhost:4200";
 
 const app = express();
