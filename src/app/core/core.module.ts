@@ -6,6 +6,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {UserService} from "../services/user.service";
 import {LoginComponent} from "../users/login/login.component";
 import {SignupComponent} from "../users/signup/signup.component";
+import { QQService } from '../services/qq.service';
 
 @NgModule({
   imports: [
@@ -18,7 +19,8 @@ import {SignupComponent} from "../users/signup/signup.component";
     AppRoutingModule
   ],
   providers: [
-    UserService
+    UserService,
+    QQService
   ],
   declarations: [
     LoginComponent,
