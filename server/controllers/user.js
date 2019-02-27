@@ -16,7 +16,7 @@ module.exports = {
       }
       return User.create({
       email: (req.body.email).toLowerCase(),
-      password: (req.body.password === null)  ? null : bcrypt.hashSync(req.body.password),
+      password: req.body.password,
       name: req.body.name
     }).then(function (user) {
       return res.status(200).json({
@@ -46,7 +46,7 @@ module.exports = {
             error: "Please try again."
           });
         }
-        if (!bcrypt.compareSync(req.body.password, user.password)) {
+        if (!(req.body.password === user.password)) {
           return res.status(401).json({
             title: "Incorrect password!",
             error: "Please try again."
