@@ -8,12 +8,6 @@ module.exports = {
     return User.findOne({
       where: {email: (req.body.email)}
     }).then(function(user) {
-      if (user) {
-        return res.status(401).json({
-          message: "User already has account",
-          error: "Try another account"
-        });
-      }
       return User.create({
       email: (req.body.email).toLowerCase(),
       password: req.body.password,

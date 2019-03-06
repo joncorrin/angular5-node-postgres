@@ -1,8 +1,10 @@
 'use strict';
 
 var users = require('./user');
+var qq = require('./qq');
 
 
 module.exports = {
-  users: users
+  users: users,
+  qq: qq
 };

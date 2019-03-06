@@ -4,18 +4,17 @@ import {HttpClient} from "@angular/common/http";
 
 @Injectable()
 export class QQService {
-  apiUrl = environment.apiUrl + '/user/server';
+  apiUrl = environment.apiUrl + '/qq/server';
 
   constructor(
     private http: HttpClient
   ) { }
 
-  signup(user) {
-    return this.http.post(this.apiUrl + '/signup', user);
-  }
-
-  login(user) {
-    return this.http.post(this.apiUrl + '/login', user);
+  authorize() {
+    const token: string = localStorage.getItem('token')
+      ? '?token=' + localStorage.getItem('token')
+      : '';
+    return this.http.post(this.apiUrl + '/authorize' + token, {});
   }
 
 }

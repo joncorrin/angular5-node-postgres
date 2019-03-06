@@ -1,8 +1,40 @@
-<p>
-  Login
-</p>
-<label for="email">Email</label>
-<input type="text" id="email" [(ngModel)]="user.email">
-<label for="password">Password</label>
-<input type="password" id="password" [(ngModel)]="user.password">
-<button type="submit" (click)="login()">Login</button>
+<div class="container-body">
+  <div class="login-container">
+     <img class="logo-img" src="/../../assets/logo.png" alt="xilo Logo">
+     <div class="welcome">
+        <h1>Welcome to <span>XILO</span></h1>
+     </div>
+     <div class="description">A platform built to modernize an Independent Agencies business</div>
+     <form class="login-form">
+        <div class="log-in-form-group">
+           <label for="email">QQ Catalyst Username</label>
+           <input id="email" type="email" name="email" placeholder=" jon@xilo.io" [(ngModel)]="user.email" class="input">
+           <span class="left-focus-border"></span>
+        </div>
+        <div class="log-in-form-group bt-0">
+           <div class="pwd-label"><label for="password">QQ Catalyst Password</label></div>
+           <div class="pwd" [style.border] = change_border()>
+              <input type="password" name="password" placeholder="*********" [(ngModel)]="user.password" class="input" id="password" (focus)="pwd_clicked = true;" (focusout)="pwd_clicked = false;">
+              <span class="left-focus-border"></span>
+           </div>
+        </div>
+        <div class="log-in-form-group bt-0">
+           <div class="pwd-label"><label for="password">Confirm Password</label></div>
+           <div class="pwd" [style.border] = change_border()>
+              <input type="password" name="cPassword" placeholder="*********" [(ngModel)]="password" class="input" id="cPassword" (focus)="pwd_clicked = true;" (focusout)="pwd_clicked = false;">
+              <span class="left-focus-border"></span>
+           </div>
+        </div>
+        <div class="check-box-container">
+        </div>
+        <div class="agent-wraper">
+        </div>
+        <div class="btn-tuple">
+           <button class="button btn-1" (click)="login()" type="submit" [disabled]="disableLogin">Authorize</button>
+        </div>
+        <div class="terms">
+           By signing in, you agree to Xilo’s<br> <a href="https://www.xilo.io/terms-conditions/" target="_blank">Terms and Conditions</a> & <a>Privacy Policy</a>.
+        </div>
+     </form>
+  </div>
+</div>
