@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
                         this.qqService.authorize()
                           .subscribe((url:any) => {
                             alert('Authorization Successful');
-                            window.location = url;
+                            window.location.href = url;
                             this.disableLogin = false;
                           }, error => {
                             alert('Authorization Successful CODE:3');
